@@ -1,9 +1,10 @@
 const db = require("./db_connection");
+const fs = require("fs");
 
 const pos = "SELECT * FROM pos";
 const users  = "SELECT * FROM users";
 const words = "SELECT * FROM words";
-const words_user_xref = "SELECT * FROM words_user_xref";
+const words_user_xref = fs.readFileSync(__dirname+"/sql/words_user_xrefq.sql").toString();
 
 
 db.execute(pos, 

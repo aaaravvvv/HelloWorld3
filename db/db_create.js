@@ -1,17 +1,17 @@
 const db = require("./db_connection");
 const fs = require("fs");
 
-const drop_words_user_xref1_table_sql = "DROP TABLE IF EXISTS words_user_xref;"
-db.execute(drop_words_user_xref1_table_sql);
+const drop_pos_table_sql = "DROP TABLE IF EXISTS pos;"
+const drop_users_table_sql = "DROP TABLE IF EXISTS users;"
+const drop_words_table_sql = "DROP TABLE IF EXISTS words;"
+const drop_words_user_xref_table_sql = "DROP TABLE IF EXISTS words_user_xref;"
 
-const drop_users_1_table_sql = "DROP TABLE IF EXISTS users;"
-db.execute(drop_users_1_table_sql);
+db.execute(drop_words_user_xref_table_sql);
+db.execute(drop_words_table_sql);
+db.execute(drop_pos_table_sql);
+db.execute(drop_users_table_sql);
 
-const drop_words_1_table_sql = "DROP TABLE IF EXISTS words;"
-db.execute(drop_words_1_table_sql);
 
-const drop_pos_table_1_sql = "DROP TABLE IF EXISTS pos;"
-db.execute(drop_pos_table_1_sql);
 
 
 
@@ -20,7 +20,6 @@ db.execute(createPos);
 
 const createUsers = fs.readFileSync(__dirname+"/sql/create_users.sql").toString();
 db.execute(createUsers);
-
 
 const createWords = fs.readFileSync(__dirname+"/sql/create_words.sql").toString();
 db.execute(createWords);

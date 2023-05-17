@@ -1,5 +1,5 @@
 CREATE TABLE `webapp_9MF_aardud25`.`words` (
-  `words_id` INT NOT NULL,
+  `words_id` INT NOT NULL AUTO_INCREMENT,
   `pos_id` INT NOT NULL,
   `word` VARCHAR(45) NULL,
   `definition` VARCHAR(45) NULL,
