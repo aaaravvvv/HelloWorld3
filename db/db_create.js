@@ -1,16 +1,16 @@
 const db = require("./db_connection");
 const fs = require("fs");
 
-const drop_words_user_xref1_table_sql = "DROP TABLE IF EXISTS words_user_xref1;"
+const drop_words_user_xref1_table_sql = "DROP TABLE IF EXISTS words_user_xref;"
 db.execute(drop_words_user_xref1_table_sql);
 
-const drop_users_1_table_sql = "DROP TABLE IF EXISTS users_1;"
+const drop_users_1_table_sql = "DROP TABLE IF EXISTS users;"
 db.execute(drop_users_1_table_sql);
 
-const drop_words_1_table_sql = "DROP TABLE IF EXISTS words_1;"
+const drop_words_1_table_sql = "DROP TABLE IF EXISTS words;"
 db.execute(drop_words_1_table_sql);
 
-const drop_pos_table_1_sql = "DROP TABLE IF EXISTS pos_1;"
+const drop_pos_table_1_sql = "DROP TABLE IF EXISTS pos;"
 db.execute(drop_pos_table_1_sql);
 
 
