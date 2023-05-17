@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocabWords</title>
+
+    <!-- Materialize CSS and Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+       #pic{
+            width: 100px;
+            height: 65px;
+            
+        }
+    </style>
+
+</head>
+
+<body class="grey darken-4 accent-4 white-text">
+    <!-- Nav bar: Reference: https://materializecss.com/navbar.html -->
+
+    <nav>
+      <div class=" blue lighten-3 nav-wrapper">
+        <a href="/" class="brand-logo center"><i class="material-icons">local_library</i>VocabWords</a>
+        <ul class="left hide-on-med-and-down">
+          <li><a href="/sign-in"><i class="material-icons left">person</i>Sign In</a></li>
+          <li><a href="/assignments">Your List</a></li>
+          <li><a href="/"><i class="material-icons left">home</i> Home</a></li>
+          <li><a href="/word-of-the-day"><i class="material-icons left">question_answer</i> Word of the Day</a></li>
+        </ul>
+      </div>
+  </nav>
+
+    <div class="container center-align">
+        <h1>Word of the Day!</h1>
+        
+        <h3>aa</h3>
+         <br>
+         <h4>(noun) basaltic lava forming very rough, jagged masses with a light frothy texture.</h4> 
+         <br> 
+         <br> 
+          
+    <h5>Enter your email to recieve the Word of the Day everyday!</h5>
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="autocomplete-input" class="white-text autocomplete">
+          <label for="autocomplete-input">Email</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="center-align">
+    <button class="btn waves-effect waves-light" type="submit">
+        <i class="material-icons right">send</i>
+        Submit
+    </button>
+</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="/scripts/materializeAutoInit.js"></script>
+
+
+</body>
+
+</html>

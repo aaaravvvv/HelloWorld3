@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocabWords</title>
+
+    <!-- Materialize CSS and Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Additional custom CSS --> 
+    <link rel="stylesheet" href="/stylesheets/assignmentsStyle.css">
+        
+
+
+</head>
+
+<body class="grey darken-4 accent-4 white-text">
+
+    <!-- Nav bar: Reference: https://materializecss.com/navbar.html -->
+    <!-- It is the same navbar as index.html (I just copy pasted it :D) -->
+    <nav>
+        <div class=" blue lighten-3 nav-wrapper">
+          <a href="/" class="brand-logo center"><i class="material-icons">local_library</i>VocabWords</a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/sign-in"><i class="material-icons left">person</i>Sign In</a></li>
+            <li><a href="/assignments">Your List</a></li>
+            <li><a href="/"><i class="material-icons left">home</i> Home</a></li>
+            <li><a href="/word-of-the-day"><i class="material-icons left">question_answer</i> Word of the Day</a></li>
+          </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- Actual page content! -->
+    <div class="container">
+        <div class="section" id="list">
+            <h1>Your Vocab List:</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Difficulty</th>
+                        <th>POS</th>
+                        <th>Definition</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cattywampus</td>
+                        <td>2</td>
+                        <td>adjective</td>
+                        <td>positioned diagonally</td>
+                        
+                        <td>
+                            <a class="btn-small waves-effect waves-light" href="/details">
+                                <i class="material-icons right">edit</i>
+                                Edit
+                            </a>
+                            <a class="btn-small waves-effect waves-light red">
+                                <i class="material-icons right">delete</i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>splat</td>
+                        <td>4</td>
+                        <td>noun</td>
+                        <td>a slat of wood in the middle of the back of a straight chair</td>
+                        
+                        <td>
+                            <a class="btn-small waves-effect waves-light" href="/details">
+                                <i class="material-icons right">edit</i>
+                                Edit
+                            </a>
+                            <a class="btn-small waves-effect waves-light red">
+                                <i class="material-icons right">delete</i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>grok</td>
+                        <td>9</td>
+                        <td>verb</td>
+                        <td>to understand intuitively</td>
+                         
+                        <td>
+                            <a class="btn-small waves-effect waves-light" href="/details">
+                                <i class="material-icons right">edit</i>
+                                Edit
+                            </a>
+                            <a class="btn-small waves-effect waves-light red">
+                                <i class="material-icons right">delete</i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- More on forms with text input.: https://materializecss.com/text-inputs.html -->
+        <h2>Add a Vocab Word:</h2>
+        <div class=" section" id="add">   
+            <div class="grey lighten-2 section" id="add">   
+            <form id="addForm">
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input type="text" id="titleInput" name="title" class="black-text validate" data-length="45" required>
+                        <label class="black-text" for="titleInput">Vocab Word:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="number" id="priorityInput" name="priority" class="black-text validate" min=1 max=10 value=5>
+                        <label class="black-text" for="priorityInput">Difficulty:</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <select type="number" id="subjectInput" name="subject" id="subjectInput">
+                            <option value="" disabled selected>Choose Part of Speech</option>
+                            <option value=1>adjective</option>
+                            <option value=2>noun</option>
+                            <option value=3>verb</option>
+                            <option value=4>adverb</option>
+                          </select>
+                          <label class="black-text" for="subjectInput">Part of Speech:</label>
+                    </div>
+
+                    <div class="row">
+                        <form class="col s12">
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <textarea id="textarea1" class="black-text materialize-textarea"></textarea>
+                              <label class="black-text" for="textarea1">Definition</label>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                </div>
+                <div class="center-align">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        <i class="material-icons right">send</i>
+                        Submit
+                    </button>
+                </div>
+                 
+            </form>
+        </div>
+        
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Auto-initialize Materialize elements (Note - more specific initialization may be required for certain elements)-->
+    <script src="/scripts/materializeAutoInit.js"></script>
+
+</body>
+
+</html>
