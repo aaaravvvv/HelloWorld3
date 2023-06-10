@@ -35,20 +35,20 @@
     <!-- Actual page content! -->
     <div class="container">
         <div class="section flow-text" id="details">
-            <h1>cattywampus</h1>
+            <h1><%= hw.word %></h1>
             <table>
                 <tr>
                     <th>Difficulty</th>
-                    <td>2</td>
+                    <td><%= hw.difficulty %></td>
                 </tr>
                 <tr>
                     <th>POS:</th>
-                    <td>adjective</td>
+                    <td><%= hw.pos %></td>
                 </tr>
                 <tr>
                     <th>Definition:</th>
                     <td>
-                        positioned diagonally
+                        <%= hw.definition %>
                     </td>
                 </tr>
             </table>
@@ -71,30 +71,32 @@
                 <form id="updateForm">
                     <div class="row">
                         <div class="input-field col s8">
-                            <input type="text" id="titleInput" name="title" class=" black-text validate" data-length="45" required value="cattywampus">
-                            <label class="black-text" for="titleInput">Word:</label>
+                            <input type="text" id="titleInput" name="title" class="validate" data-length="32" required value="<%= hw.word %>">
+                            <label for="titleInput">Assignment title:</label>
                         </div>
                         <div class="input-field col s4">
-                            <input type="number" id="priorityInput" name="priority" class="black-text validate" min=1 max=10 value=2>
-                            <label class="black-text" for="priorityInput">Difficulty:</label>
+                            <input type="number" id="priorityInput" name="priority" class="validate" min=1 max=10 value=<%= hw.difficulty %>>
+                            <label for="priorityInput">Difficulty (1-10):</label>
                         </div>
     
                         <div class="input-field col s6">
-                            <select type="number" id="subjectInput" name="subject">
-                                <option value="" disabled>Part of Speech</option>
-                                <option value=1 selected>adjective</option>
-                                <option value=2>noun</option>
-                                <option value=3>verb</option>
-                                <option value=4>adverb</option>
+
+                              <select type="number" id="subjectInput" name="subject" required>
+                                <option value="" disabled> Part of Speech </option>
+                                <option value=1   <% if (hw.pos_id == 1) { %> selected <% } %>> adjective </option>
+                                <option value=2   <% if (hw.pos_id == 2) { %> selected <% } %>> noun </option>
+                                <option value=3   <% if (hw.pos_id == 3) { %> selected <% } %>> verb </option>
+                                <option value=4   <% if (hw.pos_id == 4) { %> selected <% } %>> adverb  </option>
                               </select>
-                              <label class="black-text" for="subjectInput">Part of Speech:</label>
+                              <label for="subjectInput">Part of Speech</label>
+
                         </div>
     
                         
 
                         <div class="input-field col s12">
-                            <textarea class="black-text materialize-textarea" id="descriptionInput" name="description" data-length="150">positioned diagonally</textarea>
-                            <label class="black-text" for="descriptionInput">Definition:</label>
+                            <textarea class="materialize-textarea" id="descriptionInput" name="description"><%= hw.definition %></textarea>
+                            <label for="descriptionInput">Definition:</label>
                         </div>
     
                     </div>

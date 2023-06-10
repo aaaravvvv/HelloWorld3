@@ -51,59 +51,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>cattywampus</td>
-                        <td>2</td>
-                        <td>adjective</td>
-                        <td>positioned diagonally</td>
-                        
-                        <td>
-                            <a class="btn-small waves-effect waves-light" href="/details">
-                                <i class="material-icons right">edit</i>
-                                Edit
-                            </a>
-                            <a class="btn-small waves-effect waves-light red">
-                                <i class="material-icons right">delete</i>
-                                Delete
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>splat</td>
-                        <td>4</td>
-                        <td>noun</td>
-                        <td>a slat of wood in the middle of the back of a straight chair</td>
-                        
-                        <td>
-                            <a class="btn-small waves-effect waves-light" href="/details">
-                                <i class="material-icons right">edit</i>
-                                Edit
-                            </a>
-                            <a class="btn-small waves-effect waves-light red">
-                                <i class="material-icons right">delete</i>
-                                Delete
-                            </a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>grok</td>
-                        <td>9</td>
-                        <td>verb</td>
-                        <td>to understand intuitively</td>
-                         
-                        <td>
-                            <a class="btn-small waves-effect waves-light" href="/details">
-                                <i class="material-icons right">edit</i>
-                                Edit
-                            </a>
-                            <a class="btn-small waves-effect waves-light red">
-                                <i class="material-icons right">delete</i>
-                                Delete
-                            </a>
-                        </td>
-                    </tr>
+                    <% for (let i = 0; i < hwlist.length; i++) { %>
+                        <tr>
+                            <td><%= hwlist[i].word %></td>
+                            <td><%= hwlist[i].difficulty %></td>
+                            <td><%= hwlist[i].pos %></td>
+                            <td><%= hwlist[i].definition></td>
+                            <td>
+                                <a class="btn-small waves-effect waves-light" href="/assignments/<%= hwlist[i].id %>">
+                                    <i class="material-icons right">edit</i>
+                                    Info/Edit
+                                </a>
+                                <a class="btn-small waves-effect waves-light red">
+                                    <i class="material-icons right">delete</i>
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    
                 </tbody>
             </table>
         </div>
@@ -156,6 +122,8 @@
         </div>
         
     </div>
+
+    
 
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
