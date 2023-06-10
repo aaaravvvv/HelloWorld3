@@ -74,9 +74,9 @@ app.get( "/assignments/:id", ( req, res ) => {
 });
 
 app.get( "/word-of-the-day", ( req, res ) => {
-    res.sendFile(__dirname + "/views/word.html" );
+    res.sendFile(__dirname + "/views/word.ejs" );
 } );
 
 app.get( "/sign-in", ( req, res ) => {
-    res.sendFile(__dirname + "/views/signin.html" );
+    res.sendFile(__dirname + "/views/signin.ejs" );
 } );
