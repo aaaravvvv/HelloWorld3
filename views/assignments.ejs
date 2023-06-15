@@ -62,14 +62,13 @@
                                     <i class="material-icons right">edit</i>
                                     Info/Edit
                                 </a>
-                                <a class="btn-small waves-effect waves-light red">
+                                <a class="btn-small waves-effect waves-light red" href="/assignments/<%= hwlist[i].words_id %>/delete">
                                     <i class="material-icons right">delete</i>
                                     Delete
                                 </a>
                             </td>
                         </tr>
                         <% } %>
-                    
                 </tbody>
             </table>
         </div>
@@ -78,19 +77,19 @@
         <h2>Add a Vocab Word:</h2>
         <div class=" section" id="add">   
             <div class="grey lighten-2 section" id="add">   
-            <form id="addForm">
+            <form id="addForm" method="post" action="/assignments"> 
                 <div class="row">
                     <div class="input-field col s8">
-                        <input type="text" id="titleInput" name="title" class="black-text validate" data-length="45" required>
+                        <input type="text" id="titleInput" name="word" class="black-text validate" data-length="45" required>
                         <label class="black-text" for="titleInput">Vocab Word:</label>
                     </div>
                     <div class="input-field col s4">
-                        <input type="number" id="priorityInput" name="priority" class="black-text validate" min=1 max=10 value=5>
+                        <input type="number" id="priorityInput" name="difficulty" class="black-text validate" min=1 max=10 value=5>
                         <label class="black-text" for="priorityInput">Difficulty:</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <select type="number" id="subjectInput" name="subject" id="subjectInput">
+                        <select id="subjectInput" name="pos">
                             <option value="" disabled selected>Choose Part of Speech</option>
                             <option value=1>adjective</option>
                             <option value=2>noun</option>
@@ -101,14 +100,15 @@
                     </div>
 
                     <div class="row">
-                        <form class="col s12">
-                          <div class="row">
+                        
+                        <div class="row">
                             <div class="input-field col s12">
-                              <textarea id="textarea1" class="black-text materialize-textarea"></textarea>
-                              <label class="black-text" for="textarea1">Definition</label>
+                                <textarea id="textarea1" class="black-text materialize-textarea" name="definition"></textarea>
+                                <label class="black-text" for="textarea1">Definition</label>
                             </div>
-                          </div>
-                        </form>
+                        </div>
+                        
+                        
                       </div>
                 </div>
                 <div class="center-align">

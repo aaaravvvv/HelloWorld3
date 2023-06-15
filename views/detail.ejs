@@ -59,7 +59,7 @@
                 <i class="material-icons right">edit</i>
                 Edit
             </a>
-            <a class="btn-large waves-effect waves-light red right">
+            <a class="btn-large waves-effect waves-light red right" href="/assignments/<%= hw.words_id %>/delete">
                 <i class="material-icons right">delete</i>
                 Delete
             </a>
@@ -68,48 +68,53 @@
         <div class="grey lighten-2 modal" id="edit">
             <div class="modal-content">
                 <h3 class="black-text">Edit item:</h3>
-                <form id="updateForm">
+                <form id="updateForm" method="post" action="/assignments/<%= hw.words_id %>?_method=PUT">
                     <div class="row">
                         <div class="input-field col s8">
-                            <input type="text" id="titleInput" name="title" class="validate" data-length="32" required value="<%= hw.word %>">
-                            <label for="titleInput">Assignment title:</label>
+                            <input type="text" id="wordInput" name="word" class="validate" data-length="32" required value="<%= hw.word %>">
+                            <label for="wordInput">Word:</label>
                         </div>
                         <div class="input-field col s4">
-                            <input type="number" id="priorityInput" name="priority" class="validate" min=1 max=10 value=<%= hw.difficulty %>>
-                            <label for="priorityInput">Difficulty (1-10):</label>
+                            <input type="number" id="difficultyInput" name="difficulty" class="validate" min="1" max="10" value="<%= hw.difficulty %>">
+                            <label for="difficultyInput">Difficulty (1-10):</label>
                         </div>
-    
+
                         <div class="input-field col s6">
+                            <select id="subjectInput" name="pos" required>
+                                <option value="" disabled selected>Part of Speech</option>
+                                <option value="1" <%= hw.pos_id === 1 ? 'selected' : '' %>>adjective</option>
+                                <option value="2" <%= hw.pos_id === 2 ? 'selected' : '' %>>noun</option>
+                                <option value="3" <%= hw.pos_id === 3 ? 'selected' : '' %>>verb</option>
+                                <option value="4" <%= hw.pos_id === 4 ? 'selected' : '' %>>adverb</option>
+                            </select>
+                            <label for="subjectInput">Part of Speech</label>
+                         </div>
 
-                              <select type="number" id="subjectInput" name="subject" required>
-                                <option value="" disabled> Part of Speech </option>
-                                <option value=1   <% if (hw.pos_id == 1) { %> selected <% } %>> adjective </option>
-                                <option value=2   <% if (hw.pos_id == 2) { %> selected <% } %>> noun </option>
-                                <option value=3   <% if (hw.pos_id == 3) { %> selected <% } %>> verb </option>
-                                <option value=4   <% if (hw.pos_id == 4) { %> selected <% } %>> adverb  </option>
-                              </select>
-                              <label for="subjectInput">Part of Speech</label>
 
+                
+                        <div class="input-field col s12">
+                            <textarea class="materialize-textarea" id="definitionInput" name="definition"><%= hw.definition %></textarea>
+                            <label for="definitionInput">Definition:</label>
                         </div>
+                
+                    </div>
+                    <!-- A section for the footer of the modal -->
+                    <div class="grey lighten-2 modal-footer">
+                        <!-- Since the submit button is not within the form, it must have the form attribute specified-->
+                        <button class="btn waves-effect waves-light " type="submit" form="updateForm">
+                            <i class="material-icons right">send</i>
+                            Submit
+                        </button>
+                        <a class="waves-effect waves-light btn">Never Mind</a>
+                    </div>
+                </form>
+                
     
                         
 
-                        <div class="input-field col s12">
-                            <textarea class="materialize-textarea" id="descriptionInput" name="description"><%= hw.definition %></textarea>
-                            <label for="descriptionInput">Definition:</label>
-                        </div>
-    
-                    </div>
-                </form>
+        
                 <!-- A section for the footer of the modal -->
-                <div class="grey lighten-2 modal-footer">
-                    <!-- Since the submit button is not within the form, it must have the form attribute specified-->
-                    <button class="btn waves-effect waves-light " type="submit" form="updateForm">
-                        <i class="material-icons right">send</i>
-                        Submit
-                    </button>
-                    <a class="waves-effect waves-light btn">Never Mind</a
-                </div>
+                
                 
                 
             </div>
